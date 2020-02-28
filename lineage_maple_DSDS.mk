@@ -12,15 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_maple.mk \
-    $(LOCAL_DIR)/lineage_maple_DSDS.mk
+# Inherit device parts
+$(call inherit-product, device/sony/maple/aosp_g8142.mk)
 
-COMMON_LUNCH_CHOICES += \
-    lineage_maple-eng \
-    lineage_maple-userdebug \
-    lineage_maple-user \
-    lineage_maple_DSDS-eng \
-    lineage_maple_DSDS-userdebug \
-    lineage_maple_DSDS-user
+# Override Product Name
+PRODUCT_NAME := lineage_maple_DSDS
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := maple
